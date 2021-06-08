@@ -15,7 +15,7 @@ function App() {
         {/* <Route path="/" exact render={()=><div>首页</div>}></Route>
         <Route path="/detail" exact render={()=><div>详情页</div>}></Route> */}
         <Route path="/" exact component={Home}></Route>
-        <Route path="/detail" exact component={Detail}></Route>
+        <Route path="/detail/:id" exact component={Detail}></Route>
       </BrowserRouter>
     </div>
   );

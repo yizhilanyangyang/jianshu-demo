@@ -48,7 +48,7 @@ class List extends PureComponent{
       {
         this.state.articleList.map((item,index)=>{
           return (
-            <Link key={index} to="/detail">
+            <Link key={index} to={"/detail/"+item.id}>
               <ListItem>
                 <img className="pic" src={item.img} alt=""/>
                 <ListInfo>
