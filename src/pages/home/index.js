@@ -11,6 +11,14 @@ console.log(data)
 
 
 class Home extends Component{
+  constructor(props){
+    super(props)
+    this.state={
+      showBackTop: false,
+    }
+  }
+
+
   render(){
     return (
       <HomeWrapper>
@@ -23,17 +31,34 @@ class Home extends Component{
           <Recommend/>
           <Writer/>
         </HomeRight>
-        <BackTop onClick={this.handlerScrollTop}></BackTop>
+        {
+          this.state.showBackTop ? <BackTop onClick={this.handlerScrollTop}><i className="iconfont icon-jiantou-copy-copy"></i></BackTop> : null
+        }
+
       </HomeWrapper>
     )
   }
 
   handlerScrollTop(){
     window.scrollTo(0,0)
+  }
 
+  bindScrollEvents(){
+    window.addEventListener('scroll',()=>{
+      this.changeScrollTopShow()
+    })
+  }
+
+  changeScrollTopShow(){
+    const scrollTop =document.documentElement.scrollTop
+    this.setState({
+      showBackTop:scrollTop>300? true:false
+    })
   }
 
   componentDidMount(){
+    this.bindScrollEvents();
+    // 请求接口
     axios.get('../../api/home.json').then((res)=>{
       console.log(res.data)
     })

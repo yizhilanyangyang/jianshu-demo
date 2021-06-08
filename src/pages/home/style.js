@@ -116,4 +116,8 @@ height:60px;
 line-height:60px;
 text-align:center;
 border:1px solid #dcdcdc;
+.iconfont{
+  font-size:30px;
+  color:#999;
+}
 `;
