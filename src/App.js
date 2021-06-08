@@ -3,7 +3,9 @@ import {BrowserRouter,Route} from 'react-router-dom';
 import Header from './components/header';
 
 import Home from './pages/home'
-import Detail from './pages/detail'
+// import Detail from './pages/detail'
+import Detail from './pages/detail/loadable.js'
+
 
 
 
