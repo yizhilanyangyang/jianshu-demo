@@ -1,8 +1,9 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import { isStyledComponent } from 'styled-components';
 import {ListItem,ListInfo} from '../style';
+import {Link} from 'react-router-dom'
 
-class List extends Component{
+class List extends PureComponent{
   constructor(props){
     super(props);
     this.state={
@@ -46,13 +47,17 @@ class List extends Component{
       <div>
       {
         this.state.articleList.map((item,index)=>{
-          return (   <ListItem key={index}>
-            <img className="pic" src={item.img} alt=""/>
-            <ListInfo>
-              <h3 className="title">{item.title}</h3>
-              <p className="desc">{item.desc}</p>
-            </ListInfo>
-          </ListItem>)
+          return (
+            <Link key={index} to="/detail">
+              <ListItem>
+                <img className="pic" src={item.img} alt=""/>
+                <ListInfo>
+                  <h3 className="title">{item.title}</h3>
+                  <p className="desc">{item.desc}</p>
+                </ListInfo>
+              </ListItem>
+            </Link>
+          )
         })
       }
     </div>

@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import axios from 'axios';
 import {HomeWrapper,HomeLeft,HomeRight,BackTop} from './style';
 import Topic from './components/topic';
@@ -10,7 +10,7 @@ import data from '../../api/home.json';
 console.log(data)
 
 
-class Home extends Component{
+class Home extends PureComponent{
   constructor(props){
     super(props)
     this.state={
