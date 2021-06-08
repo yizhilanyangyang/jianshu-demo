@@ -1,5 +1,4 @@
 import React,{PureComponent} from 'react';
-import { isStyledComponent } from 'styled-components';
 import {ListItem,ListInfo} from '../style';
 import {Link} from 'react-router-dom'
 

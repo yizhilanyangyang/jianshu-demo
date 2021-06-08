@@ -9,7 +9,8 @@ const LoadableComponent = Loadable({
   },
 });
 
-export default () => <LoadableComponent></LoadableComponent>
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => <LoadableComponent></LoadableComponent>;
 
 // export default class App extends React.Component {
 //   render() {
