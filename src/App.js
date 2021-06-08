@@ -5,13 +5,13 @@ import Header from './components/header';
 import Home from './pages/home'
 // import Detail from './pages/detail'
 import Detail from './pages/detail/loadable.js'
-
-
+import store from './store'
+import {Provider} from 'react-redux'
 
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Header/>
       <BrowserRouter>
         {/* <Route path="/" exact render={()=><div>首页</div>}></Route>
@@ -19,7 +19,7 @@ function App() {
         <Route path="/" exact component={Home}></Route>
         <Route path="/detail/:id" exact component={Detail}></Route>
       </BrowserRouter>
-    </div>
+    </Provider>
   );
 }
 
